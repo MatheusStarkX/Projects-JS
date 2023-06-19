@@ -26,9 +26,10 @@ for(let key of keys){
         } 
         // Caso seja = (calcula o resultado da operação)
         else if (value == '=') {
-            console.log(input)
-            let result = eval(PerpareInput(input))
-            display_output.textContent = CleanOutput(result);
+            let result = eval(PerpareInput(input));
+            input = CleanOutput(result);
+            display_input.textContent = '';
+            display_output.textContent = input;
         } 
         // Caso seja os parênteses
         else if (value == 'brackets') {
@@ -54,7 +55,6 @@ for(let key of keys){
 // Formata o input
 function CleanInput(input) {
     let input_array = input.split("");
-    //let input_array_length = input_array.length;
     for(let i=0; i < input_array.length; i++){
         if (input_array[i] == "*"){
             input_array[i] = 'x';
@@ -71,7 +71,7 @@ function CleanInput(input) {
 // Valida se os operadores não estão repetivos seguidamente
 function ValidateInput(value) {
     let last_input = input.slice(-1);
-    let simbols = ['+','-','*','/','.'];
+    let simbols = ['+','-','*','/','.',''];
     
     if (simbols.includes(value) && simbols.includes(last_input)){
         return false;
@@ -81,21 +81,31 @@ function ValidateInput(value) {
 
 // Formata o output
 function CleanOutput(output){
+    output = output.toFixed(10);
     let output_string = output.toString();
-    let decimal = output_string.split('.')[1];
     let number = output_string.split('.')[0];
+    let decimal = output_string.split('.')[1];
     let output_array = number.split('');
 
+    // Separa por vírgula a cada 1000
     if (output_array.length > 3){
         for (let i = output_array.length-3; i > 0; i -= 3){
-            output_array.splice(i, 0, ',')
+            output_array.splice(i, 0, ',');
         }
     }
-    if (decimal){
-        output_array.push('.');
-        output_array.push(decimal);
-    }
 
+    // Formata a parte decimal
+    if (decimal){      
+        let i = decimal.length-1;
+        while (i > 0 && decimal[i] == '0'){
+            decimal = decimal.slice(0, i);
+            i -= 1;
+        }
+        if (decimal != ''){
+            output_array.push('.');
+            output_array.push(decimal);
+        }
+    }
     return output_array.join('');
 }
 
