@@ -36,10 +36,90 @@
     <main>
         <div class="container">
             <div class="search-container">
-                 <input type="text" name="search" id="search-bar" placeholder="Search for movies, series and more">
-                 <a href="#"><img class="search-icon" src="assets/search-icon.png"></a>
+                <div class="search-element">
+                     <input type="text" name="search" id="search-bar" placeholder="Search for movies, series and more">
+                     <a href="#"><img class="search-icon" src="assets/search-icon.png"></a>
+                </div>
+                <div class="search-list" id="search-list">
+                    <div class="search-list-item">
+                        <div class="search-item-image">
+                            <img src="https://m.media-amazon.com/images/M/MV5BOTY4YjI2N2MtYmFlMC00ZjcyLTg3YjEtMDQyM2ZjYzQ5YWFkXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg" alt="Poster">
+                        </div>
+                        <div class="search-item-info">
+                            <h3>Batman Begins</h3>
+                            <h4>2005</h4>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
             </div>
-            <div class="content"></div> 
+
+            <div class="content" id="content">
+                <div class="poster">
+                    <img src="https://m.media-amazon.com/images/M/MV5BOTY4YjI2N2MtYmFlMC00ZjcyLTg3YjEtMDQyM2ZjYzQ5YWFkXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg" alt="Poster" width="300px"/>
+                </div>
+                <div class="infos">
+                    <h1>
+                        <span id="title">Batman Begins</span>
+                        <span id="year">(2005)</span>
+                    </h1>
+                    <div class="sub-info">
+                        <span id="rated">PG-13</span>
+                        <span id="released">15 jun 2005</span>
+                        <span id="genre">Action, Crime, Drama</span>
+                        <span id="runtime">140 min</span>
+                    </div>
+
+                    <div class="ratings">
+                        <div class="rating">
+                            <div class="source">Rotten Tomatoes</div>
+                            <div class="circular-progress rotten-tomatoes">
+                                <span class="progress-value rotten-tomatoes">0%</span>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <div class="source">Internet Movie Database</div>
+                            <div class="circular-progress imdb">
+                                <span class="progress-value imdb">0</span>
+                            </div>
+                        </div>
+                        <div class="rating">
+                            <div class="source">Metacritic</div>
+                            <div class="circular-progress metacritic">
+                                <span class="progress-value metacritic">0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plot">
+                        <h2>Sinopse</h2>
+                        <p>When his parents are killed, billionaire playboy Bruce Wayne relocates to Asia, where he is mentored by Henri Ducard and Ra's Al Ghul in how to fight evil. When learning about the plan to wipe out evil in Gotham City by Ducard, Bruce prevents this plan from getting any further and heads back to his home. Back in his original surroundings, Bruce adopts the image of a bat to strike fear into the criminals and the corrupt as the icon known as "Batman". But it doesn't stay quiet for long.</p>
+                    </div>
+                    <div class="people">
+                        <div>
+                            <div class="person">Christopher Nolan</div>
+                            <div class="work">Director</div>
+                        </div>
+                        <div>
+                            <div class="person">Bob Kane, David S. Goyer, Christopher Nolan</div>
+                            <div class="work">Writers</div>
+                        </div>
+                        <div>
+                            <div class="person">Christian Bale, Michael Caine, Ken Watanabe</div>
+                            <div class="work">Actors/Actresses</div>
+                        </div>
+                    </div>
+
+                    <div class="awards">
+                        <h3>Awards</h3>
+                        <p>Nominated for 1 Oscar. 14 wins & 79 nominations total</p>
+                    </div>
+                    
+
+                    
+
+                </div> 
+            </div> 
         </div>
     </main>
 </body>

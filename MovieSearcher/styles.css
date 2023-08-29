@@ -76,12 +76,22 @@ header {
     cursor: pointer;
 }
 
-.search-container {
+.container {
     display: flex;
-    margin: 30px auto;
-    width: 500px;
-    border: solid var(--cor4) 2px;
-    border-radius: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-container {  
+    width: 500px; 
+    height: 150px;
+    position: relative;
+}
+
+.search-element {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
     background-color: var(--cor0);
 }
 
@@ -92,7 +102,6 @@ header {
     padding: 0px 20px;
     border: none;
     outline: none;
-    border-radius: 20px 0px 0px 20px;
 }
 
 .search-icon{
@@ -100,5 +109,200 @@ header {
     float: right;
     width: 50px;
     height: 50px;
-    border-radius: 0px 20px 20px 0px;
 }  
+
+.search-list {
+    background-color: #ffffff;
+    position: absolute;
+    width: 100%;
+    top: 82px;
+    right: 0;
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.search-list-item {
+    display: flex;
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--cor4);
+}
+
+.search-list-item:hover{
+    background-color: var(--cor3);
+    transition: 0.2s;
+}
+
+.search-item-image img  {
+    width: 40px;
+    margin-right: 1rem;
+}
+
+.search-item-info {
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+h4 {
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.content {
+    display: flex;
+    margin: 20px;
+}
+
+.poster {
+    background-color: var(--cor2);
+    height: 100%;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.infos {
+    margin: 10px;
+    color: var(--cor0);
+    font-family: var(--font2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.infos > div {
+    margin: 10px 0px;
+}
+
+h1 {
+    font-weight: 600;
+    color: var(--cor3);
+    font-size: 2rem;
+}
+
+#year {
+    font-weight: 400;
+}
+
+#rated {
+    font-weight: 300;
+    padding: 2px;
+    border: solid 1px var(--cor1); 
+}
+
+.sub-info > span {
+    margin-right: 20px;
+}
+
+.plot > h2 {
+    color: var(--cor2);
+}
+
+p {
+    font-weight: 300;
+    font-size: 0.8rem;
+    margin: 5px 0px;
+}
+
+.people {
+    font-size: 0.8rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+.person {
+    font-weight: bold;
+}
+
+.awards > h3 {
+    color: var(--cor2);
+}
+
+/* Progress bar ratings */
+
+.circular-progress{
+    position: relative;
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    background: conic-gradient(#ffee00 3.6deg, #fff 0deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.circular-progress::before{
+    content: "";
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+.progress-value{
+    position: relative;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--cor3);
+}
+
+.ratings {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 170px;
+    padding: 10px 0px;
+    gap: 5px;
+    font-size: 0.8rem;
+    text-align: center;
+    color: var(--cor2);
+}
+
+@media (max-width: 750px) {
+    .content{
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .infos{
+        text-align: center;
+    }
+    .ratings{
+        justify-content: space-between;
+    }
+    .people{
+        justify-content: center;
+    }
+  }
