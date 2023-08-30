@@ -125,6 +125,10 @@ header {
     cursor: pointer;
 }
 
+.hide-search-list{
+    display: none;
+}
+
 .search-list-item {
     display: flex;
     padding: 0.5rem;
