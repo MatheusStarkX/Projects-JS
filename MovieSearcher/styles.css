@@ -82,7 +82,7 @@ header {
     align-items: center;
 }
 
-.search-container {  
+.search-container {
     width: 500px; 
     height: 150px;
     position: relative;
@@ -156,26 +156,6 @@ h4 {
     font-size: 0.8rem;
     opacity: 0.6;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .content {
     display: flex;
@@ -309,4 +289,10 @@ p {
     .people{
         justify-content: center;
     }
-  }
+    .menu, .language {
+        display: none;
+    }
+    .search-container {
+        width: 350px;
+    }   
+}

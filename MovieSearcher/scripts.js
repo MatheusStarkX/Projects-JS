@@ -20,7 +20,7 @@ async function loadMovies(search) {
 
 function findMovies(){
     let search = (movieSearchBox.value).trim();
-
+    
     if(search.length > 0){
         searchList.classList.remove('hide-search-list')
         loadMovies(search)
@@ -33,7 +33,7 @@ function findMovies(){
 function displayMovieList(movies){
     searchList.textContent = ""
     for (let i = 0; i < movies.length; i++) {
-
+        
         let searchListItem = document.createElement('div')
         let searchItemImage = document.createElement('div')
         let img = document.createElement('img')
@@ -44,7 +44,7 @@ function displayMovieList(movies){
         searchListItem.classList.add('search-list-item')
         searchItemImage.classList.add('search-item-image')
         searchItemInfo.classList.add('search-item-info')
-
+        
         if(movies[i].Poster != 'N/A'){
             img.src = movies[i].Poster
         }
@@ -200,3 +200,9 @@ function AnimationProgressBar(ratings){
         }    
     }, speed);
 }
+
+window.addEventListener('click', (event) => {
+    if(event.target.className != "search-bar"){
+        searchList.classList.add('hide-search-list');
+    }
+})
